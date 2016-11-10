@@ -21,7 +21,8 @@ public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServlet
 		logger.info("Get RootConfig");
 		/** Core layer configuration class */
 		return new Class<?>[]{
-			RootConfig.class
+			RootConfig.class,
+			RedisSessionConfig.class
 			};
 	}
 
