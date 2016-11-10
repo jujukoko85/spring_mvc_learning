@@ -11,8 +11,7 @@ import com.howard.springmvc.service.ServiceConfig;
 //		basePackages = {"com.howard.springmvc.service"},
 //		excludeFilters = {
 //				@Filter(type = FilterType.ANNOTATION, value = EnableWebMvc.class)
-//				}
-		)
+				)
 public class RootConfig {
 
 }
