@@ -4,7 +4,7 @@ import org.springframework.session.web.context.AbstractHttpSessionApplicationIni
 import org.springframework.web.WebApplicationInitializer;
 
 /**
- * add springSessionRepositoryFilter(inited by root context) to servlet context
+ * add springSessionRepositoryFilter(inited by RedisSessionConfig in root content) to servlet context
  * @author Administrator
  *
  */
