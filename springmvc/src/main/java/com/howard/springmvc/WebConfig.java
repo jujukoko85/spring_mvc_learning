@@ -15,7 +15,7 @@ import com.howard.springmvc.controller.ControllerConfig;
 @Configuration
 @EnableWebMvc /** <mvc:annotation-driven /> */
 @ComponentScan(basePackageClasses = {ControllerConfig.class}) /** init the beans in package and subpackage of the config class */
-@ImportResource(locations = {"WEB-INF/config/app-web-flow.xml"})
+@ImportResource(locations = {"/WEB-INF/config/app-context.xml"})
 public class WebConfig extends WebMvcConfigurerAdapter {
 
 	/** config the view resolve */

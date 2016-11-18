@@ -8,6 +8,8 @@ import org.springframework.web.WebApplicationInitializer;
  * @author Administrator
  *
  */
-public class WebSessionInitializer extends AbstractHttpSessionApplicationInitializer implements WebApplicationInitializer {
+public class WebSessionInitializer extends AbstractHttpSessionApplicationInitializer 
+implements WebApplicationInitializer 
+{
 
 }

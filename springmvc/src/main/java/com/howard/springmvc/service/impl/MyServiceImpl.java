@@ -8,6 +8,8 @@ import com.howard.springmvc.service.MyService;
 public class MyServiceImpl implements MyService {
 
 	public MyServiceImpl() {
+		System.out.println("#################");
 		System.out.println("myService inited!");
+		System.out.println("#################");
 	}
 }
