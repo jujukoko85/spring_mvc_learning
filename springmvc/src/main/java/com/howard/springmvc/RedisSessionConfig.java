@@ -16,7 +16,7 @@ public class RedisSessionConfig {
 		System.out.println("redis start...");
         JedisConnectionFactory jedisConnectionFactory = new JedisConnectionFactory();
         jedisConnectionFactory.setPort(6379);
-        jedisConnectionFactory.setHostName("localhost");
+        jedisConnectionFactory.setHostName("127.0.0.1");
         System.out.println("redis inited...");
         System.out.println("############################################");
         System.out.println("############################################");
