@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration scan="false" debug="false">
+    <appender name="standard_out" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <charset>UTF-8</charset>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level [%logger{50}] - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+	<logger name="druid"  level="ERROR" />
+	<logger name="org.springframework" level="DEBUG" />
+    <logger name="org.hibernate" level="INFO" />
+    <logger name="us.codecraft" level="DEBUG" />
+    
+    <logger name="com.zeshanec" level="DEBUG">
+    	<appender-ref ref="worldMonitorAppender" />
+    </logger>
+
+    <root level="DEBUG">
+        <appender-ref ref="standard_out" />
+    </root>
+</configuration>
