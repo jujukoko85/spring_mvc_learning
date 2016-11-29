@@ -85,7 +85,6 @@ public class TestHttpClient {
 		System.out.println(stockJsonObject);
 		JSONObject jsonArray = stockJsonObject.getJSONObject("sku");
 	
-		stockJsonObject.getObject("sku", clazz)
 		
 		
 		
