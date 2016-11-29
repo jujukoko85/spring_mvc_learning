@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_N2o9cLXgEeaGb6fJZc-9Vg" name="NewModel">
+  <packagedElement xmi:type="uml:Interface" xmi:id="_3yy2ULXgEeaGb6fJZc-9Vg" name="HttpClient"/>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_FmQmMLXhEeaGb6fJZc-9Vg" name="HttpMessage"/>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_HPKdsLXhEeaGb6fJZc-9Vg" name="HttpResponse">
+    <generalization xmi:id="_QAZCwLXhEeaGb6fJZc-9Vg" general="_FmQmMLXhEeaGb6fJZc-9Vg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_UBQ3MLXhEeaGb6fJZc-9Vg" name="HttpRequest">
+    <generalization xmi:id="_WrtrQLXhEeaGb6fJZc-9Vg" general="_FmQmMLXhEeaGb6fJZc-9Vg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_cnMLMLXhEeaGb6fJZc-9Vg" name="HttpUriRequest">
+    <generalization xmi:id="_goigwLXhEeaGb6fJZc-9Vg" general="_UBQ3MLXhEeaGb6fJZc-9Vg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_evc4MLXhEeaGb6fJZc-9Vg" name="HttpEntityEnclosingRequest">
+    <generalization xmi:id="_gQ4OsLXhEeaGb6fJZc-9Vg" general="_UBQ3MLXhEeaGb6fJZc-9Vg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_N4g60LXiEeaGb6fJZc-9Vg" client="_3yy2ULXgEeaGb6fJZc-9Vg" supplier="_HPKdsLXhEeaGb6fJZc-9Vg"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_OqtMwLXiEeaGb6fJZc-9Vg" client="_3yy2ULXgEeaGb6fJZc-9Vg" supplier="_cnMLMLXhEeaGb6fJZc-9Vg"/>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_RWbzMLXiEeaGb6fJZc-9Vg" name="HttpContext"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_TIWcwLXiEeaGb6fJZc-9Vg" client="_3yy2ULXgEeaGb6fJZc-9Vg" supplier="_RWbzMLXiEeaGb6fJZc-9Vg"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_YYzpwLXiEeaGb6fJZc-9Vg" client="_3yy2ULXgEeaGb6fJZc-9Vg" supplier="_UBQ3MLXhEeaGb6fJZc-9Vg"/>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_Z2tyMLXiEeaGb6fJZc-9Vg" name="HttpHost"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_bCoywLXiEeaGb6fJZc-9Vg" client="_3yy2ULXgEeaGb6fJZc-9Vg" supplier="_Z2tyMLXiEeaGb6fJZc-9Vg"/>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_fjVWwLXiEeaGb6fJZc-9Vg" name="ResponseHandler"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_hkMbQLXiEeaGb6fJZc-9Vg" client="_3yy2ULXgEeaGb6fJZc-9Vg" supplier="_fjVWwLXiEeaGb6fJZc-9Vg"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_qzdnMLXiEeaGb6fJZc-9Vg" name="HttpClientBuilder">
+    <ownedOperation xmi:id="_HEl6gLXjEeaGb6fJZc-9Vg" name="create" isStatic="true">
+      <ownedParameter xmi:id="_JpUhELXjEeaGb6fJZc-9Vg" type="_qzdnMLXiEeaGb6fJZc-9Vg" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_QKiLULXjEeaGb6fJZc-9Vg" name="build">
+      <ownedParameter xmi:id="_R2G8ULXjEeaGb6fJZc-9Vg" type="_5XobQLXiEeaGb6fJZc-9Vg" direction="return">
+        <name xsi:nil="true"/>
+      </ownedParameter>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_uq4ksLXiEeaGb6fJZc-9Vg" name="Interface10"/>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_vt8kMLXiEeaGb6fJZc-9Vg" name="Interface11"/>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_wo6-sLXiEeaGb6fJZc-9Vg" name="Interface12"/>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_4U3WsLXiEeaGb6fJZc-9Vg" name="Closeable"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_5XobQLXiEeaGb6fJZc-9Vg" name="CloseableHttpClient">
+    <interfaceRealization xmi:id="_-4pMwLXiEeaGb6fJZc-9Vg" client="_5XobQLXiEeaGb6fJZc-9Vg" supplier="_3yy2ULXgEeaGb6fJZc-9Vg" contract="_3yy2ULXgEeaGb6fJZc-9Vg"/>
+    <interfaceRealization xmi:id="_ABC_QLXjEeaGb6fJZc-9Vg" client="_5XobQLXiEeaGb6fJZc-9Vg" supplier="_4U3WsLXiEeaGb6fJZc-9Vg" contract="_4U3WsLXiEeaGb6fJZc-9Vg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_Y7hf0LXjEeaGb6fJZc-9Vg" client="_qzdnMLXiEeaGb6fJZc-9Vg" supplier="_5XobQLXiEeaGb6fJZc-9Vg"/>
+</uml:Model>
