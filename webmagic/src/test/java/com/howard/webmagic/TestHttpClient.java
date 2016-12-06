@@ -1,17 +1,15 @@
 package com.howard.webmagic;
 
 import java.io.IOException;
-import java.net.InetAddress;
-import java.net.URI;
 import java.net.URISyntaxException;
 import java.security.KeyManagementException;
 import java.security.KeyStoreException;
 import java.security.NoSuchAlgorithmException;
+import java.util.Set;
 
 import javax.net.ssl.SSLContext;
 
 import org.apache.http.HttpHeaders;
-import org.apache.http.HttpHost;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
@@ -24,7 +22,6 @@ import org.apache.http.util.EntityUtils;
 import org.junit.Test;
 
 import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.google.common.base.CharMatcher;
 import com.howard.webmagic.util.RegexUtils;
@@ -42,17 +39,18 @@ public class TestHttpClient {
 				.setSSLContext(sslContext)
 				.build();
 		
-		String detailUrl = "http://item.taobao.com/item.htm?id=10966631540";
+//		String detailUrl = "http://item.taobao.com/item.htm?id=10966631540";
+		String detailUrl = "https://item.taobao.com/item.htm?spm=a230r.1.14.20.vv8ZaF&id=38847761196&ns=1&abbucket=3#detail";
 		HttpGet get = new HttpGet(detailUrl);
 		get.addHeader(HttpHeaders.USER_AGENT, userAngent);
 		
-		HttpHost proxy = new HttpHost(InetAddress.getByName("127.0.0.1"), 8888);
-		RequestConfig requestConfig = RequestConfig
-				.custom()
-				.setProxy(proxy)
-				.build();
-		
-		get.setConfig(requestConfig);
+//		HttpHost proxy = new HttpHost(InetAddress.getByName("127.0.0.1"), 8888);
+//		RequestConfig requestConfig = RequestConfig
+//				.custom()
+//				.setProxy(proxy)
+//				.build();
+//		
+//		get.setConfig(requestConfig);
 		
 		HttpResponse response = client.execute(get);
 		String content = EntityUtils.toString(response.getEntity(), "UTF8");
@@ -70,12 +68,12 @@ public class TestHttpClient {
 		get.addHeader(HttpHeaders.USER_AGENT, userAngent);
 		get.addHeader(HttpHeaders.REFERER, detailUrl);
 		
-		response = client.execute(proxy, get);
+//		response = client.execute(proxy, get);
+		response = client.execute(get);
 		
 		System.out.println(response.getStatusLine());
 		
 		content = EntityUtils.toString(response.getEntity(), "UTF8");
-		
 		System.out.println(content);
 		
 		JSONObject jsonContent = JSON.parseObject(content);
@@ -83,10 +81,14 @@ public class TestHttpClient {
 		JSONObject stockJsonObject = dataJsonObject.getJSONObject("dynStock");
 		System.out.println(dataJsonObject);
 		System.out.println(stockJsonObject);
-		JSONObject jsonArray = stockJsonObject.getJSONObject("sku");
-	
-		
-		
+		JSONObject jsonMap = stockJsonObject.getJSONObject("sku");
+		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+		System.out.println(jsonMap.toJSONString());
+		Set<String> keys = jsonMap.keySet();
+		for(String key : keys) {
+			JSONObject stockInfo = jsonMap.getJSONObject(key);
+			System.out.println(key + "\t\t" + stockInfo);
+		}
 		
 	}
 
