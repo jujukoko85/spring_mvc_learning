@@ -3,8 +3,10 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:flow="http://www.springframework.org/schema/webflow-config" 
 	xsi:schemaLocation="
-		http://www.springframework.org/schema/webflow-config http://www.springframework.org/schema/webflow-config/[CA]/spring-webflow-config-2.3.xsd
-		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+		http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+		http://www.springframework.org/schema/webflow-config
+		http://www.springframework.org/schema/webflow-config/[CA]/spring-webflow-config-2.3.xsd
 		">
 	
 	<!-- web flow -->

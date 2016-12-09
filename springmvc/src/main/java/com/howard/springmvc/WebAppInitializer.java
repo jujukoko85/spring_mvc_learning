@@ -12,7 +12,10 @@ import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatche
  * @author root
  *
  */
-public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer implements WebApplicationInitializer { //for jettyv
+public class WebAppInitializer 
+extends AbstractAnnotationConfigDispatcherServletInitializer 
+implements WebApplicationInitializer   //for jetty
+{
 
 	private Logger logger = LoggerFactory.getLogger(getClass());
 	
@@ -22,6 +25,7 @@ public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServlet
 		/** Core layer configuration class */
 		return new Class<?>[]{
 			RootConfig.class,
+			WebSecurityConfig.class,
 			RedisSessionConfig.class
 			};
 	}
